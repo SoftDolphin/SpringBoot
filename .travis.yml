@@ -21,9 +21,13 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r dolphin-springboot2-webservice *
-  - mkdir -p deploy
-  - mv dolphin-springboot2-webservice.zip deploy/dolphin-springboot2-webservice.zip
+  - mkdir -p before-deploy
+  - cp scripts/*.sh before-deploy/
+  - cp appspec.yml before-deploy/
+  - cp build/libs/*.jar berfore-deploy/
+  - cd before-deploy && zip -r before-deply *
+  - cd ../ && mkdir -p deploy
+  - mv befroe-deploy/before-deploy.zip deploy/dolphin-springboot2-webservice.zip
 
 deploy:
   - provider: s3
