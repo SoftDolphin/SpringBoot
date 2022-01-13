@@ -27,7 +27,7 @@ before_deploy:
   - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deply *
   - cd ../ && mkdir -p deploy
-  - mv befroe-deploy/before-deploy.zip deploy/dolphin-springboot2-webservice.zip
+  - mv before-deploy/before-deploy.zip deploy/dolphin-springboot2-webservice.zip
 
 deploy:
   - provider: s3
