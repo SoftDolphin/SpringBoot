@@ -24,7 +24,7 @@ before_deploy:
   - mkdir -p before-deploy
   - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
-  - cp build/libs/*.jar berfore-deploy/
+  - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deply *
   - cd ../ && mkdir -p deploy
   - mv befroe-deploy/before-deploy.zip deploy/dolphin-springboot2-webservice.zip
