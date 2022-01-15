@@ -17,6 +17,8 @@ do
   RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
   UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l)
 
+  echo "> UP_COUNT check : ${UP_COUNT}"
+
   if [ ${UP_COUNT} -ge 1 ]
   then
     echo "> Health check 성공"
